@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public int totalPieceCount;
     public bool isGameCompleted = false;
+
+    [SerializeField] private GameObject GameOne, GameTwo;
     
     private void Awake()
     {
@@ -19,6 +21,12 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+
+    public void SetGameStart()
+    {
+        if (totalPieceCount == 35) GameOne.SetActive(true);
+        else GameTwo.SetActive(true);
     }
 
     public bool CheckGameCompleted(int count)

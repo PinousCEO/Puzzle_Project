@@ -25,7 +25,6 @@ public class PuzzleDrag : MonoBehaviour
 
     void Update()
     {
-        // 🎯 퍼즐을 "홀드" 중이면 마우스를 계속 따라감
         if (holdMode && root != null)
         {
             Vector3 worldPos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -33,7 +32,6 @@ public class PuzzleDrag : MonoBehaviour
             root.position = worldPos + grabOffset;
         }
 
-        // 👇 클릭 시작
         if (Input.GetMouseButtonDown(0))
         {
             clickTime = Time.time;
@@ -60,7 +58,6 @@ public class PuzzleDrag : MonoBehaviour
             }
         }
 
-        // 👇 클릭 유지 (일반 드래그 중)
         if (Input.GetMouseButton(0) && dragging && !holdMode)
         {
             if (root == null) return;
@@ -69,17 +66,14 @@ public class PuzzleDrag : MonoBehaviour
             root.position = worldPos + grabOffset;
         }
 
-        // 👇 마우스 버튼 뗐을 때
         if (Input.GetMouseButtonUp(0))
         {
             float clickDuration = Time.time - clickTime;
 
-            // 🎯 짧은 클릭이면 → 홀드 모드 전환
             if (clickDuration <= clickHoldThreshold)
             {
                 if (!holdMode)
                 {
-                    // 홀드 시작
                     if (target != null)
                     {
                         root = dragWholeGroup ? (FindGroupRoot(target) ?? target) : target;
@@ -89,7 +83,7 @@ public class PuzzleDrag : MonoBehaviour
                         grabOffset = root.position - worldPos;
 
                         holdMode = true;
-                        Cursor.visible = false; // 홀드 모드 시작 시 커서 숨김
+                        Cursor.visible = false; 
                     }
                 }
                 else

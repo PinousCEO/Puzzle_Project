@@ -9,13 +9,13 @@ public class PuzzlePiece : MonoBehaviour
     public float baseSnapThreshold = 0.15f;  // 스냅 허용 거리(월드 거리)
     public float searchRadius = 1.0f;        // 그룹 탐색 반경
 
-    private const int rowLength = 7;         // 한 행에 7개 (1~7, 8~14, ...)
+    private int rowLength = 10;         // 한 행에 7개 (1~7, 8~14, ...)
     private List<Transform> snapIns = new();
     private List<Transform> snapOuts = new();
 
     void Start()
     {
-        // 이름이 숫자형일 경우만 파싱
+        rowLength = GameManager.instance.totalPieceCount == 35 ? 7 : 10;
         if (int.TryParse(gameObject.name, out int parsed))
             id = parsed;
         else
