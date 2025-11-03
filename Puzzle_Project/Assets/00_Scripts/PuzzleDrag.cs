@@ -40,7 +40,6 @@ public class PuzzleDrag : MonoBehaviour
             if (hit.collider != null)
             {
                 var piece = hit.collider.GetComponent<PuzzlePiece>();
-                piece.GetComponent<SpriteRenderer>().sortingOrder = 1;
                 if (piece != null)
                 {
                     target = piece.transform;
@@ -92,7 +91,6 @@ public class PuzzleDrag : MonoBehaviour
                     holdMode = false;
                     Cursor.visible = true; // 놓을 때 커서 다시 표시
 
-                    target.GetComponent<SpriteRenderer>().sortingOrder = 0;
                     if (root != null)
                         TrySnapAll(root);
 
@@ -107,7 +105,6 @@ public class PuzzleDrag : MonoBehaviour
                 {
                     dragging = false;
                     Cursor.visible = true; // 🎯 드래그 끝났을 때 커서 다시 표시
-                    target.GetComponent<SpriteRenderer>().sortingOrder = 0;
 
                     if (root != null)
                         TrySnapAll(root);

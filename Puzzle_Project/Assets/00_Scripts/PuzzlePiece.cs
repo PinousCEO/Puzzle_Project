@@ -21,6 +21,8 @@ public class PuzzlePiece : MonoBehaviour
         else
             Debug.LogWarning($"[PuzzlePiece] 이름이 숫자가 아님: {gameObject.name}");
 
+        GetComponent<SpriteRenderer>().sortingOrder = id;
+
         snapIns.Clear();
         snapOuts.Clear();
 
