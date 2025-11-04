@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6b0e46cec18dded48afb3a4e66deba39
+timeCreated: 1532077639
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123720
+  packageName: Fireworks Pack with sounds 3D&2D
+  packageVersion: 3.0.0
+  assetPath: Assets/Hovl Studio/Fireworks/Prefabs/2D/2D Fireworks area type5.prefab
+  uploadId: 570800

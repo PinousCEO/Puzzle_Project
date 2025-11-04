@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 578466317ea39884986b7f239bcac6d2
+timeCreated: 1531936409
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 123720
+  packageName: Fireworks Pack with sounds 3D&2D
+  packageVersion: 3.0.0
+  assetPath: Assets/Hovl Studio/Fireworks/Prefabs/Fireworks mine.prefab
+  uploadId: 570800
