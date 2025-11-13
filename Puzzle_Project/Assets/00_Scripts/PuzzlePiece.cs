@@ -120,10 +120,16 @@ public class PuzzlePiece : MonoBehaviour
 
         // 🎯 병합 이후 즉시 완성 체크 (마지막 퍼즐 낱개도 포함)
         Transform mergedRoot = FindGroupRoot(myRoot) ?? myRoot;
+        SetAlpha(myRoot.GetComponent<SpriteRenderer>(), 1f);
         int count = mergedRoot.GetComponentsInChildren<PuzzlePiece>(true).Length;
         GameManager.instance?.CheckGameCompleted(count);
     }
-
+    void SetAlpha(SpriteRenderer sr, float a)
+    {
+        Color c = sr.color;
+        c.a = a;
+        sr.color = c;
+    }
     bool AreGridNeighborsStrict(int aId, int bId)
     {
         int aIdx = aId - 1, bIdx = bId - 1;
